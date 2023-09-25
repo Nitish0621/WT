@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Simple Calculator</title>
+  <style>
+    body {
+      background-color:powderblue;
+      color:black;
+      overflow: hidden;
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      height: 90vh;
+    }
+
+    .calculator {
+      background-color:black;
+      border-radius: 20px;
+      margin: auto;
+      padding: 2rem;
+      width: 18rem;
+    }
+
+    .value {
+      background-color:white;
+      border: none;
+      color: black;
+      font-size: 1.4rem;
+      height: 60px;
+      margin-bottom: 20px;
+      text-align: right;
+      width: 94%;
+    }
+
+    .num {
+      background-color: #6d7698;
+      border-radius: 50%;
+      cursor: pointer;
+      display: inline-block;
+      font-size: 1.5rem;
+      height: 49px;
+      line-height: 47px;
+      margin-right: 20px;
+      margin-top: 10px;
+      text-align: center;
+      width: 49px;
+    }
+
+    .num.clear {
+      background-color:lightseagreen;
+      color: #ffffff;
+    }
+
+    .num.plus {
+      background-color: #43b581;
+    }
+
+    .num.equal i {
+      font-size: 1.5rem;
+      line-height: 32px;
+    }
+
+    .num:hover {
+      opacity: 0.7;
+    }
+
+    @media screen and (max-width: 600px) {
+      .calculator {
+        padding: 1rem;
+        width: 80%;
+      }
+
+      .value {
+        font-size: 1.2rem;
+        height: 50px;
+        margin-bottom: 10px;
+      }
+
+      .num {
+        font-size: 1.2rem;
+        height: 40px;
+        line-height: 38px;
+        margin-right: 10px;
+        margin-top: 5px;
+        width: 40px;
+      }
+
+      .num.equal i {
+        font-size: 1.2rem;
+        line-height: 28px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1 align="center">Calculator</h1>
+    <form action="" name="calc" class="calculator">
+      <input type="text" class="value" readonly name="txt" />
+      <span class="num clear" onclick="calc.txt.value=''"><i>C</i></span>
+      <span class="num" onclick="calc.txt.value+='/'"><i>/</i></span>
+      <span class="num" onclick="calc.txt.value+='*'"><i>*</i></span>
+      <span class="num" onclick="calc.txt.value+='-'"><i>-</i></span>
+      <span class="num " onclick="calc.txt.value+='+'"><i>+</i></span>
+      <span class="num" onclick="calc.txt.value+='7'"><i>7</i></span>
+      <span class="num" onclick="calc.txt.value+='8'"><i>8</i></span>
+      <span class="num" onclick="calc.txt.value+='9'"><i>9</i></span>
+      <span class="num" onclick="calc.txt.value+='4'"><i>4</i></span>
+      <span class="num" onclick="calc.txt.value+='5'"><i>5</i></span>
+      <span class="num" onclick="calc.txt.value+='6'"><i>6</i></span>
+      <span class="num" onclick="calc.txt.value+='1'"><i>1</i></span>
+      <span class="num" onclick="calc.txt.value+='2'"><i>2</i></span>
+      <span class="num" onclick="calc.txt.value+='3'"><i>3</i></span>
+      <span class="num" onclick="calc.txt.value+='0'"><i>0</i></span>
+      <span class="num" onclick="calc.txt.value+='00'"><i>00</i></span>
+      <span class="num" onclick="calc.txt.value+='.'"><i>.</i></span>
+
+      <span class="num equal" onclick="document.calc.txt.value=eval(calc.txt.value)"><i>=</i></span>
+    </form>
+  </div>
+</body>
+
+</html>
